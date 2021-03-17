@@ -1,10 +1,8 @@
 <h1>職業一覧</h1>
-<%= link_to '職業新規登録',  new_job_path%>
+<%= link_to '職業新規登録',  new_job_path %>
 
-<ul>
-  <li>エンジニア</li>
-  <li>工場</li>
-  <li>牧場</li>
-  <li>看護師</li>
-  <li>ドッグトレーナー</li>
-</ul>
+<% @jobs.each do |job| %>
+ <div>
+  <%= link_to job.name, job_path(job.id) %>
+ </div>
+<%end%>

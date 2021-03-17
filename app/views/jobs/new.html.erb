@@ -1,2 +1,14 @@
 <h1>wiki投稿</h1>
-
+<%= form_with model:@job, local: true do |f|%>
+  <div class="field">
+    <%= f.label :name, "業種名" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :content, "コンテント" %><br />
+    <%= f.text_area :content %>
+  </div>
+<div>
+<%= f.submit '送信', class: 'form-submit' %>
+</div>
+<%end%>
