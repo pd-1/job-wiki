@@ -3,4 +3,6 @@ class Job < ApplicationRecord
     validates    :name  
     validates    :content
   end
+  belongs_to :user
+
 end
