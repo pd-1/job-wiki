@@ -1,7 +1,7 @@
-<h1>wiki</h1>
-
-<h2>職業</h2>
-<h3>メリット</h3>
-<h3>デメリット</h3>
-<h3>給料</h3>
-<h3>やりがい</h3>
+<%= @job.name %>wiki
+<div>
+<%= @job.content %>
+</div>
+<div>
+<%= link_to '編集する',edit_job_path(@job.id)%>
+</div>

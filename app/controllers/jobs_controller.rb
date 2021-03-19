@@ -4,6 +4,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @job = Job.find(params[:id])
   end
 
   def new
@@ -13,6 +14,16 @@ class JobsController < ApplicationController
   def create
     @job = Job.create(job_params)
     redirect_to jobs_path
+  end
+
+  def edit
+    @job = Job.find(params[:id])
+  end
+
+  def update
+    @job = Job.find(params[:id])
+    @job.update(job_params)
+    redirect_to job_path
   end
 
   private

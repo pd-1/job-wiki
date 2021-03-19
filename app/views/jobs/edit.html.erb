@@ -1,0 +1,10 @@
+<h1>編集ページ</h1>
+<%= form_with model: @job, local: true do |f|%>
+  <div>
+    <%= f.label :content, 'コンテント' %> <br />
+   <%= f.text_field :content %>
+  </div>
+  <div>
+    <%= f.submit '送信' %>
+  </div>
+<%end%>

@@ -9,11 +9,11 @@
 <% if @messages.present? %>
   <% @messages.each do |m| %>
     <strong><%= m.content %></strong>
-    <small>by<%= link_to  m.user.name,root_path %>さん</small>
+    <small>by <%= link_to  m.user.name,root_path %>さん</small>
     <hr>
   <% end %>
 <% else %>
-  <h3 class="text-center">メッセージはまだありません</h3>
+  <h3>メッセージはまだありません</h3>
 <% end %>
 
 <%= form_for @message do |f| %>
