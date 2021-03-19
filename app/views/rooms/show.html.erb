@@ -1,0 +1,24 @@
+<h1>DM</h1>
+
+<h4>参加者</h4>
+<% @chats.each do |e| %>
+  <h5><%= e.user.name%>さん</h5>
+<% end %>
+
+<hr>
+<% if @messages.present? %>
+  <% @messages.each do |m| %>
+    <strong><%= m.content %></strong>
+    <small>by<%= link_to  m.user.name,root_path %>さん</small>
+    <hr>
+  <% end %>
+<% else %>
+  <h3 class="text-center">メッセージはまだありません</h3>
+<% end %>
+
+<%= form_for @message do |f| %>
+  <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <br>
+  <%= f.submit "投稿する" %>
+<% end %>

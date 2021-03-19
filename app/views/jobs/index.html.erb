@@ -4,5 +4,6 @@
 <% @jobs.each do |job| %>
  <div>
   <%= link_to job.name, job_path(job.id) %>
+  <%= link_to job.user.name, user_path(job.user_id) %>
  </div>
 <%end%>
