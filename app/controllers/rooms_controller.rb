@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   def create
     @room = Room.create
     @chat1 = Chat.create(room_id: @room.id, user_id: current_user.id)
-    @chat2 = Chat.create(params.require(:chat).permit(:user_id, :room_id).merge(room_id: @room.id))
+    @chat2 = Chat.create(chat_params)
     redirect_to "/rooms/#{@room.id}" 
   end
 
@@ -17,5 +17,11 @@ class RoomsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  private
+
+  def chat_patams
+    params.require(:chat).permit(:user_id, :room_id).merge(room_id: @room.id)
   end
 end

@@ -9,7 +9,7 @@
 <% if @messages.present? %>
   <% @messages.each do |m| %>
     <strong><%= m.content %></strong>
-    <small>by <%= link_to  m.user.name,root_path %>さん</small>
+    <div>by <%= link_to  m.user.name,root_path %>さん</div>
     <hr>
   <% end %>
 <% else %>

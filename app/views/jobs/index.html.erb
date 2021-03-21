@@ -1,9 +1,14 @@
-<h1>職業一覧</h1>
-<%= link_to '職業新規登録',  new_job_path %>
-
+<div class="job-head">
+  <h1 class="job-title">職業一覧</h1>
+  <%= link_to '職業新規登録',  new_job_path, class: :job_new %>
+</div>
+ <div class="job-contents">
 <% @jobs.each do |job| %>
- <div>
-  <%= link_to job.name, job_path(job.id) %>
-  <%= link_to job.user.name, user_path(job.user_id) %>
- </div>
+  <div class="job-content">
+    <%= link_to job.name, job_path(job.id) %>
+    <% unless current_user.id == job.user_id %>
+    <%= link_to job.user.name, user_path(job.user_id) %>
+    <% end %>
+    </div>
+  </div>
 <%end%>

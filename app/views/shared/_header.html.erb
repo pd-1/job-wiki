@@ -1,14 +1,12 @@
 <header class="header">
-  <% if user_signed_in?  %>
-      <%= link_to "トップページへ", root_path, class: :nav__btn %>
-      <%= link_to "職業一覧", jobs_path, class: :nav__btn %>
-    <div>
-      <%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: :nav__logout %>
-    </div>
-  <% else %>
-    <div>
-      <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-      <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-    </div>
-  <% end %>
+  <h1><%= link_to "Job Wiki", root_path, class: :title %></h1>
+  <ul class="nav">
+    <% if user_signed_in?  %>
+    <li class="menu-item"><%= link_to "職業一覧", jobs_path, class: :nav__btn %></li>
+    <li class="menu-item"><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: :nav__logout %></li>
+    <% else %>
+    <li class="menu-item"><%= link_to "ログイン", new_user_session_path, class: :nav__btn %></li>
+    <li class="menu-item"><%= link_to "新規登録", new_user_registration_path, class: :nav__btn %></li>
+    <% end %>
+  </ul>
 </header>

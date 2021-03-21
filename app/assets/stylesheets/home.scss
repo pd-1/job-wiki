@@ -1,11 +1,19 @@
 .header{
   width: 100vw;
-  height: 50px;
-  background-color: #b68973;
+  height: 100px;
+  // background-color: #73b67c;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  padding-right: 30px;
+  justify-content: space-between;
+  border-bottom: 2px solid gray;
 }
-.header-image{
+.menu-item{
+  display: inline-block;
+  padding: 10px;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

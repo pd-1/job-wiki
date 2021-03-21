@@ -1,3 +1,22 @@
-// Place all the styles related to the jobs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.job-head{
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.job-title{
+  font-weight: bold;
+}
+.job_new{
+  font-size: 15px;
+}
+
+.job-contents{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.job-content{
+  border: 2px solid green;
+}
