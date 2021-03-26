@@ -1,3 +1,67 @@
-// Place all the styles related to the rooms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.join-member{
+  text-align: center;
+}
+.overflow-scroll{
+  overflow-y: auto;
+  height: 70vh;
+}
+.join-member{
+  font-size: 20px;
+}
+.says{
+  float: left;
+  display: inline-block;
+  position: relative;
+  width: calc(100% - 56px);
+  margin: 1.5em 15px 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+.says:after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #e0edff;
+}
+.other-user-says{
+  float: right;
+  position: relative;
+  width: calc(100% - 56px);
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  word-break: break-all;
+  border-radius: 15px;
+}
+.other-user-says:after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff;
+}
+
+.fixed-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chat-text{
+  width: 70vw;
+  height: 12vh;
+}

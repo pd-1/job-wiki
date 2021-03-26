@@ -1,24 +1,54 @@
-<h1>DM</h1>
+<div class="join-member">
+  <% @chats.each do |e| %>
+  <span><%= e.user.name %>さん</span>
+  <%end%>
+  <span>がお話し中です</span>
+</div>
 
-<h4>参加者</h4>
-<% @chats.each do |e| %>
-  <h5><%= e.user.name%>さん</h5>
-<% end %>
-
-<hr>
-<% if @messages.present? %>
+<div class="overflow-scroll">
+<!-- 自分のメッセージ -->
   <% @messages.each do |m| %>
-    <strong><%= m.content %></strong>
-    <div>by <%= link_to  m.user.name,root_path %>さん</div>
-    <hr>
+  <% if m.user == current_user %>
+    <tr class="row justify-content-center">
+      <td class="col-2">
+        <%# <img src="/images/enjoy.jpg" link="image" class="profile-image"> %>
+      <td>
+      <!-- メッセージを右側に表示する -->
+      <td class="col-10">
+        <div class="col-1 float-right">
+          <%= m.user.name %> <br>
+        </div>      
+        <div class="says">
+        <p><%= safe_join(m.content.split("\n"),tag(:br)) %></p>
+        <span><%= l m.created_at, format: :short %></span>
+      </div>
+      </td>
+    </tr> 
+<!-- 相手のメッセージ -->
+  <%else%>     
+    <tr class="row justify-content-center">
+      <!-- メッセージを左側に表示する -->
+      <td class="col-10">
+        <div class="col-11 float-right">
+          <%= m.user.name %> <br>
+        </div>
+        <div class="other-user-says">
+          <p><%= safe_join(m.content.split("\n"),tag(:br)) %></p>
+          <span><%= l m.created_at, format: :short %></span>
+        </div>
+      </td>
+       <td class="col-2">
+        <%# <img src="/images/cow.jpg" link="image" class="profile-image"> %>
+      </td>
+    </tr>
   <% end %>
-<% else %>
-  <h3>メッセージはまだありません</h3>
 <% end %>
+</div>
 
-<%= form_for @message do |f| %>
-  <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
-  <%= f.hidden_field :room_id, value: @room.id %>
-  <br>
-  <%= f.submit "投稿する" %>
-<% end %>
+<div class="fixed-bottom">
+  <%= form_for @message do |f| %>
+    <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , class: 'chat-text' %>
+    <%= f.hidden_field :room_id, value: @room.id %>
+    <%= f.submit "投稿する" %>
+  <% end %>  
+</div>

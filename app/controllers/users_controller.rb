@@ -3,8 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @currentUserChat=Chat.where(user_id: current_user.id)
     @userChat=Chat.where(user_id: @user.id)
-    if @user.id == current_user.id
-    else
+    unless @user.id == current_user.id
       @currentUserChat.each do |cu|
       @userChat.each do |u|
         if cu.room_id == u.room_id then
@@ -13,8 +12,7 @@ class UsersController < ApplicationController
         end
       end
     end
-    if @isRoom
-    else
+    unless @isRoom
       @room = Room.new
       @chat = Chat.new
     end

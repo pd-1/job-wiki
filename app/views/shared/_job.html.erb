@@ -1,0 +1,12 @@
+ <div class="col-xs-6 col-sm-4 col-md-3">
+  <div class="card">
+  <h3 class="card-header"><%= link_to job.name, job_path(job.id) %></h3>
+    <div class="card-body">
+      <p class="card-text"><%= link_to "#{job.name}の詳細へ", job_path(job.id) %></p>
+      <%# <% unless current_user.id == job.user_id %>
+      <%= link_to job.user.name, user_path(job.user_id),class: 'btn bg-brown'%><span>とチャットする</span>
+      <%# <% end %>
+    </div>
+  </div>
+</div>
+

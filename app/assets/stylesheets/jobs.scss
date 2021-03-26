@@ -10,13 +10,16 @@
 .job_new{
   font-size: 15px;
 }
+ .job_wrapper{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+  }
+  .card{  
+    margin-top: 20px;
+  }
 
-.job-contents{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-
-}
-.job-content{
-  border: 2px solid green;
-}
+  .job-text{
+    text-align: center;
+    margin: 0 100px;
+    }

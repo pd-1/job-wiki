@@ -1,12 +1,12 @@
-<header class="header">
+<header class="d-flex justify-content-between .border-brown header" >
   <h1><%= link_to "Job Wiki", root_path, class: :title %></h1>
   <ul class="nav">
     <% if user_signed_in?  %>
-    <li class="menu-item"><%= link_to "職業一覧", jobs_path, class: :nav__btn %></li>
-    <li class="menu-item"><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: :nav__logout %></li>
+    <li class="menu-item"><%= link_to "職業一覧", jobs_path, class: 'p-10 d-inline-block'  %></li>
+    <li class="menu-item"><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'p-10 d-inline-block' %></li>
     <% else %>
-    <li class="menu-item"><%= link_to "ログイン", new_user_session_path, class: :nav__btn %></li>
-    <li class="menu-item"><%= link_to "新規登録", new_user_registration_path, class: :nav__btn %></li>
+    <li class="menu-item"><%= link_to "ログイン", new_user_session_path, class: 'd-inline-block p-10'  %></li>
+    <li class="menu-item"><%= link_to "新規登録", new_user_registration_path, class: 'd-inline-block p-10'  %></li>
     <% end %>
   </ul>
 </header>

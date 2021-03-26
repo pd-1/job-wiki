@@ -1,14 +1,12 @@
 .header{
   width: 100vw;
   height: 100px;
-  // background-color: #73b67c;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid gray;
+  background-color: #F5F2F0;
 }
-.menu-item{
-  display: inline-block;
+
+.p-10 {
   padding: 10px;
 }
 
