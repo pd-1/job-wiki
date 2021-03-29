@@ -1,3 +1,4 @@
+// 職業一覧
 .job-head{
   font-size: 40px;
   display: flex;
@@ -16,10 +17,38 @@
    align-items: center;
   }
   .card{  
-    margin-top: 20px;
+    margin: 20px 10px 10px 10px;
   }
-
+  .card-header{
+    text-align: center;
+  }
   .job-text{
     text-align: center;
     margin: 0 100px;
-    }
+  }
+
+// 職業詳細
+.job-edit{
+  font-size: 15px;
+}
+.job-heading-index{
+  border: 2px solid #b68973;
+  height: 100%;
+  width: 100%;
+  margin: 5em auto;
+  max-width: 650px;
+  padding: 50px;
+}
+.border {
+  border-top: dashed 1px skyblue;
+}
+.job-contents{
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.content-name{
+  font-size: 20px;
+  margin: 10px 0;
+}

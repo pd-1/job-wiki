@@ -3,8 +3,10 @@
   <%= link_to '職業新規登録',  new_job_path, class: :job_new %>
 </div>
 
-<div class="job_wrapper">
-  <div class="d-flex flex-wrap">
-   <%= render partial: 'shared/job', collection: @jobs %>
+<div class="container">
+  <div class="job_wrapper">
+    <div class="d-flex flex-wrap">
+      <%= render partial: 'shared/job', collection: @jobs %>
+    </div>
   </div>
 </div>

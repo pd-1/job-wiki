@@ -1,0 +1,19 @@
+.sign-up-title{
+  text-align: center;
+  margin: 20px 0;
+}
+.sign-up-border{
+  border: 1px solid #555;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  height: 450px;
+  margin-top: 20px;
+}
+
+.form-group{
+  margin: 10px;
+  text-align: center;
+}
