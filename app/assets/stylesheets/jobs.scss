@@ -8,25 +8,23 @@
 .job-title{
   font-weight: bold;
 }
-.job_new{
-  font-size: 15px;
+.job-genres{
+  border-spacing: 5px;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #e4d4bc;
+  border: solid 1px #af9d85;
+  margin: 10px;
 }
- .job_wrapper{
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-  }
-  .card{  
-    margin: 20px 10px 10px 10px;
-  }
-  .card-header{
-    text-align: center;
-  }
-  .job-text{
-    text-align: center;
-    margin: 0 100px;
-  }
-
+.job-genre{
+}
+.job_wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+ }
 // 職業詳細
 .job-edit{
   font-size: 15px;
