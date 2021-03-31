@@ -5,14 +5,14 @@
   <span>がお話し中です</span>
 </div>
 
-<div class="overflow-scroll">
+<div class="overflow-scroll" id="list">
 <!-- 自分のメッセージ -->
   <% @messages.each do |m| %>
   <% if m.user == current_user %>
     <tr class="row justify-content-center">
       <td class="col-2">
         <%# <img src="/images/enjoy.jpg" link="image" class="profile-image"> %>
-      <td>
+      </td>
       <!-- メッセージを右側に表示する -->
       <td class="col-10">
         <div class="col-1 float-right">
@@ -29,7 +29,7 @@
     <tr class="row justify-content-center">
       <!-- メッセージを左側に表示する -->
       <td class="col-10">
-        <div class="col-11 float-right">
+        <div class="col-12 float-right">
           <%= m.user.name %> <br>
         </div>
         <div class="other-user-says">
@@ -45,10 +45,11 @@
 <% end %>
 </div>
 
+
 <div class="fixed-bottom">
-  <%= form_for @message do |f| %>
-    <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , class: 'chat-text' %>
+  <%= form_with model:@message,method: :post,id: "form" do |f| %>
+    <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , class: 'chat-text',id: "content" %>
     <%= f.hidden_field :room_id, value: @room.id %>
-    <%= f.submit "投稿する" %>
+    <%= f.submit "投稿する",id: "submit" %>
   <% end %>  
 </div>
