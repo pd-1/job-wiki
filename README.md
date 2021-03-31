@@ -1,24 +1,79 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column              | Type        | Options                     |
+| ------------------- | ----------- | --------------------------- |
+| email               | string      | null: false, unique: true   |
+| encrypted_password  | string      | null: false                 |
+| nickname            | string      | null: false                 |
+| genre_id            | integer     | null: false                 |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :jobs dependent: :destroy
+- has_one_attached :image dependent: :destroy
 
-* Database creation
 
-* Database initialization
+## jobs テーブル
 
-* How to run the test suite
+| Column        | Type          | Options                       |
+| ------------  | ----------    | ----------------------------- |
+| name          | string        | null: false                   |
+| genre_id      | integer       | null: false                   |
+| description   | text          | null: false                   |
+| active        | text          | null: false                   |
+| flow          | text          | null: false                   |
+| become        | text          | null: false                   |
+| qualification | text          | null: false                   |
+| salary        | text          | null: false                   |
+| rewarding     | text          | null: false                   |
+| busy          | text          | null: false                   |
+| correct       | text          | null: false                   |
+| aspiring      | text          | null: false                   |
+| status        | text          | null: false                   |
+| demand        | text          | null: false                   |
+| future        | text          | null: false                   |
+| user          | references    | null: false,foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- belongs_to :user
+- belongs_to_active_hash :genre
 
-* ...
+## rooms テーブル
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| id             | integer    | null: false                    |
+
+### Association
+
+- belongs_to :order
+
+## orders テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| message        | text       | null: false                    |
+| user           | references | null: false, foreign_key: true |
+| room           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :buyer
+
+## chats(中間テーブル) テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| user           | references | null: false, foreign_key: true |
+| room           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
+- has_one :buyer
