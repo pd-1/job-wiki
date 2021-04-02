@@ -12,8 +12,11 @@
 
 ### Association
 
-- has_many :jobs dependent: :destroy
+- has_many :chats
+- has_many :messages
+- has_many :jobs
 - has_one_attached :image dependent: :destroy
+- belongs_to_active_hash :genre
 
 
 ## jobs テーブル
@@ -39,8 +42,8 @@
 
 ### Association
 
-- belongs_to :user
-- belongs_to_active_hash :genre
+-  belongs_to :user
+-  belongs_to_active_hash :genre
 
 ## rooms テーブル
 | Column         | Type       | Options                        |
@@ -49,9 +52,10 @@
 
 ### Association
 
-- belongs_to :order
+- has_many :chats
+- has_many :messages
 
-## orders テーブル
+## messages テーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
@@ -62,8 +66,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :item
-- has_one :buyer
+- belongs_to :room
 
 ## chats(中間テーブル) テーブル
 
@@ -75,5 +78,4 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :item
-- has_one :buyer
+- belongs_to :room
