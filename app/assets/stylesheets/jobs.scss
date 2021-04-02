@@ -1,9 +1,10 @@
-// 職業一覧
+// 職業目次
 .job-head{
   font-size: 40px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 20px auto;
 }
 .job-title{
   font-weight: bold;
@@ -18,13 +19,24 @@
   border: solid 1px #af9d85;
   margin: 10px;
 }
-.job-genre{
+.job-genres:hover{
+  color: white;
+  background-color: brown;
 }
 .job_wrapper{
   display: flex;
   justify-content: space-around;
   align-items: center;
- }
+}
+// 職業一覧
+.job-genre-details{
+  margin: 10px auto;
+  background-color: #e4d4bc;
+  border: solid 1px #af9d85;
+  border-radius: 10px;
+  width: 80vw;
+  padding: 10px;
+}
 // 職業詳細
 .job-edit{
   font-size: 15px;

@@ -1,15 +1,5 @@
 <div class="job-head">
-  <h1 class="job-title">職業一覧</h1>
+  <h1 class="job-title">目次</h1>
 </div>
 
-<div class="container">
-  <div class="job_wrapper">
-    <div class="d-flex flex-wrap">
-      <%= render partial: 'shared/job'%>
-    </div>
-  </div>
-</div>
-
-<% @jobs.each do |job|%>
-<%= link_to "#{job.name}の詳細へ", job_path(job.id) %>
-<%end%>
+<%= render partial: 'shared/job'%>

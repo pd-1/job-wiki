@@ -1,9 +1,35 @@
+<div class="container">
   <div class="row">
-      <% @JobGenres.where.not(id: 1).each do |jobgenre|%>
-        <div class="col-4">
-          <div class="job-genres">
-              <%= jobgenre.name %>
+    <div class="job_wrapper">
+      <div class="d-flex flex-wrap">
+        <% @genres.where.not(id: 1).each do |genre|%>
+          <div class="col-4">
+            <div class="job-genres">
+                <%= genre.name %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="job-head", style="margin-top: 5em;">
+  <h1 class="job-title">職業一覧</h1>
+</div>
+
+<div class="container">
+  <div class="row", style="margin-top: 10px;">
+    <div class="d-flex flex-column">
+    <% @genres.where.not(id: 1).each do |genre|%>
+      <div class="col-12">
+        <div class="job-genre-details">
+          <h4><%= genre.name %></h4>
+        </div>
+        <div>
+          <p>この職業はです。</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

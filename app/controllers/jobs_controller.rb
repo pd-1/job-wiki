@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.all
-    @JobGenres = JobGenre.all 
+    @genres = Genre.all 
   end
 
   def show
