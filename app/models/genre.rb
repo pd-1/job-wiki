@@ -17,17 +17,8 @@ class Genre < ActiveHash::Base
     { id: 15, name: '漫画・アニメ・ゲーム'},
     { id: 16, name: 'デザイン・広告・アート'},
     { id: 17, name: 'IT・Web'},
-    { id: 18, name: '法律・士業・政治'},
-    { id: 19, name: '公務員'},
-    { id: 20, name: '金融・コンサル系'},
-    { id: 21, name: '国際'},
-    { id: 22, name: '建築・インテリア・不動産'},
-    { id: 23, name: '事務・秘書'},
-    { id: 24, name: 'オフィス'},
-    { id: 25, name: '企業'},
-    { id: 26, name: '運輸・輸送'},
-    { id: 27, name: '保安'},
-    { id: 28, name: '葬祭・宗教'},
-    { id: 29, name: 'その他'}
+    { id: 18, name: '公務員'},
+    { id: 19, name: '金融・コンサル系'},
+    { id: 20, name: '建築・インテリア・不動産'}
   ]
 end

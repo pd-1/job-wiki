@@ -60,8 +60,6 @@ ActiveRecord::Schema.define(version: 2021_04_02_060853) do
     t.text "status", null: false
     t.text "demand", null: false
     t.text "future", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -97,7 +95,6 @@ ActiveRecord::Schema.define(version: 2021_04_02_060853) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "chats", "rooms"
   add_foreign_key "chats", "users"
-  add_foreign_key "jobs", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
 end

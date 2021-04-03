@@ -15,8 +15,7 @@ class Job < ApplicationRecord
     validates    :status
     validates    :demand
     validates    :future
-    validates    :user_id
 end
-    belongs_to :user
-
+    extend ActiveHash::Associations::ActiveRecordExtensions
+    belongs_to_active_hash :genre
 end
