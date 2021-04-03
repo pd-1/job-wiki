@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
 
   private
 
-  def chat_patams
+  def chat_params
     params.require(:chat).permit(:user_id, :room_id).merge(room_id: @room.id)
   end
 end

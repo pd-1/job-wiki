@@ -4,9 +4,11 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
     @genres = Genre.all 
+    @medicals = Medical.all
   end
 
   def show
+    @users = User.where(genre_id: @job.genre.id)
   end
 
   def new
@@ -14,7 +16,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.create(job_params)
+    @job = Job.create!(job_params)
     redirect_to jobs_path
   end
 
@@ -29,7 +31,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:name, :content).merge(user_id: current_user.id)
+    params.require(:job).permit(:name,:genre_id,:description,:active,:flow,:become,:qualification,:salary,:rewarding,:busy,:correct,:aspiring,:status,:demand,:future)
   end
 
   def find_id

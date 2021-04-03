@@ -29,6 +29,18 @@
         <div>
           <p>この職業はです。</p>
         </div>
+        <% if genre.id == 3 %>
+          <% @medicals.each do |medical|%>
+          <div>
+            <h6><%=link_to medical.name, root_path %></h6>
+          </div>
+          <% end %>
+          <% @jobs.each do |job| %>
+          <div>
+          <%=link_to job.name,job_path(job.id)  %>
+          </div>
+        <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
