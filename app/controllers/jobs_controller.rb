@@ -1,14 +1,13 @@
 class JobsController < ApplicationController
-  before_action :find_id, only:[:show,:edit,:update]
 
   def index
     @jobs = Job.all
-    @genres = Genre.all 
-    @medicals = Medical.all
+    @parents = Category.all.order("id ASC").limit(14)
   end
 
   def show
-    @users = User.where(genre_id: @job.genre.id)
+    @category = Category.find(params[:id])
+    @users = User.where(category_id: @category.id)
   end
 
   def new
@@ -16,25 +15,31 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.create!(job_params)
+    @job = Job.create(job_params)
     redirect_to jobs_path
   end
 
   def edit
+       @children = Category.find(params[:id])
+    if Job.where(params[category_id: @children.id]).blank?
+       render  :new
+    else
+      @job = Job.where(params[category_id: @children.id])
+      render :edit
+    end
   end
 
   def update
-    @job.update(job_params)
-    redirect_to job_path
+    if @job.update(job_params)
+       redirect_to job_path
+    else
+      redirect_to root_path
+    end
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:name,:genre_id,:description,:active,:flow,:become,:qualification,:salary,:rewarding,:busy,:correct,:aspiring,:status,:demand,:future)
-  end
-
-  def find_id
-    @job = Job.find(params[:id])
+    params.require(:job).permit(:category_id,:description,:active,:flow,:become,:qualification,:salary,:rewarding,:busy,:correct,:aspiring,:status,:demand,:future)
   end
 end
