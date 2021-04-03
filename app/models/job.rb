@@ -1,7 +1,5 @@
 class Job < ApplicationRecord
   with_options presence: true do
-    validates    :name
-    validates    :genre_id 
     validates    :description
     validates    :active
     validates    :flow 
@@ -15,7 +13,5 @@ class Job < ApplicationRecord
     validates    :status
     validates    :demand
     validates    :future
-end
-    extend ActiveHash::Associations::ActiveRecordExtensions
-    belongs_to_active_hash :genre
+ end
 end
