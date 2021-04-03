@@ -9,6 +9,8 @@ class User < ApplicationRecord
          has_one_attached :image
          with_options presence: true do
           validates :name
-          validates :category_id, numericality: { other_than: 1 }
+          validates :genre_id, numericality: { other_than: 1 }
          end 
+         extend ActiveHash::Associations::ActiveRecordExtensions
+         belongs_to_active_hash :genre
 end

@@ -27,7 +27,7 @@
         職業選択
       </div>
       <div class="col-sm-9">
-        <%= f.collection_select(:category_id, Category.all,:id,:name,{},{class: 'form-control',id: 'inputGenre3'}) %>
+        <%= f.collection_select(:genre_id, Genre.all,:id,:name,{},{class: 'form-control',id: 'inputGenre3'}) %>
       </div>
     </div>
 

@@ -2,10 +2,10 @@
   <div class="row">
     <div class="job_wrapper">
       <div class="d-flex flex-wrap">
-        <% @parents.where.not(id: 1).where.not(id: 2).each do |parent|%>
+        <% @genres.where.not(id: 1).each do |genre|%>
           <div class="col-4">
             <div class="job-genres">
-                <%= parent.name %>
+                <%= genre.name %>
             </div>
           </div>
         <% end %>
@@ -21,19 +21,26 @@
 <div class="container">
   <div class="row", style="margin-top: 10px;">
     <div class="d-flex flex-column">
-    <% @parents.where.not(id: 1).where.not(id: 2).each do |parent|%>
+    <% @genres.where.not(id: 1).each do |genre|%>
       <div class="col-12">
         <div class="job-genre-details">
-          <h4><%= parent.name %></h4>
+          <h4><%= genre.name %></h4>
         </div>
-        <%# <div> %>
-          <%# <p>この職業はです。</p> %>
-        <%# </div> %>
-          <% parent.children.each do |child|%>
+        <div>
+          <p>この職業はです。</p>
+        </div>
+        <% if genre.id == 3 %>
+          <% @medicals.each do |medical|%>
           <div>
-            <h6><%=link_to child.name, job_path(child.id) %></h6>
+            <h6><%=link_to medical.name, root_path %></h6>
           </div>
           <% end %>
+          <% @jobs.each do |job| %>
+          <div>
+          <%=link_to job.name,job_path(job.id)  %>
+          </div>
+        <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>

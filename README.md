@@ -7,7 +7,7 @@
 | email               | string      | null: false, unique: true   |
 | encrypted_password  | string      | null: false                 |
 | nickname            | string      | null: false                 |
-| category_id            | integer     | null: false                 |
+| genre_id            | integer     | null: false                 |
 
 
 ### Association
@@ -24,7 +24,7 @@
 | Column        | Type          | Options                       |
 | ------------  | ----------    | ----------------------------- |
 | name          | string        | null: false                   |
-| category_id      | integer       | null: false                   |
+| genre_id      | integer       | null: false                   |
 | description   | text          | null: false                   |
 | active        | text          | null: false                   |
 | flow          | text          | null: false                   |
