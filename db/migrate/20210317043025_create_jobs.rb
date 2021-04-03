@@ -18,8 +18,6 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.text :status,  null: false 
       t.text :demand,  null: false 
       t.text :future,  null: false 
-      t.references :user,     foreign_key: true 
-
     end
   end
 end

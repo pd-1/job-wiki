@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
          has_many :chats
          has_many :messages
-         has_many :jobs
          has_one_attached :image
          with_options presence: true do
           validates :name

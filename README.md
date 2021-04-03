@@ -38,7 +38,6 @@
 | status        | text          | null: false                   |
 | demand        | text          | null: false                   |
 | future        | text          | null: false                   |
-| user          | references    | null: false,foreign_key: true |
 
 ### Association
 
