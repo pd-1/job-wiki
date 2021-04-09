@@ -5,23 +5,24 @@
   <%else%>
     <%= link_to '編集する', edit_job_path(@job.ids), class: 'job-edit'%>
   <%end%>
+
 </div>
     <%= render partial:'shared/contents'%>
 <div class="job-text">
-  <h3 id="chapter1"><%= @job.name %>の仕事内容</h3>
-  <p><%= @job.description %></p>
-  <h3 id="chapter2"><%= @job.name %>の就職先・活躍の場</h3>
-  <h3 id="chapter3"><%= @job.name %>の１日の流れ</h3>
-  <h3 id="chapter4"><%= @job.name %>になるには</h3>
-  <h3 id="chapter5"><%= @job.name %>に必要な資格・難易度</h3>
-  <h3 id="chapter6"><%= @job.name %>の給料・年収</h3>
-  <h3 id="chapter7"><%= @job.name %>のやりがい・楽しさ</h3>
-  <h3 id="chapter8"><%= @job.name %>の辛さ・大変さ</h3>
-  <h3 id="chapter9"><%= @job.name %>に向いている人</h3>
-  <h3 id="chapter10"><%= @job.name %>の志望動機</h3>
-  <h3 id="chapter11"><%= @job.name %>の雇用形態</h3>
-  <h3 id="chapter12"><%= @job.name %>の需要・求人</h3>
-  <h3 id="chapter13"><%= @job.name %>の現場と将来性</h3>
+  <h3 id="chapter1"><%= @category.name %>の仕事内容</h3>
+  <p></p>
+  <h3 id="chapter2"><%= @category.name %>の就職先・活躍の場</h3>
+  <h3 id="chapter3"><%= @category.name %>の１日の流れ</h3>
+  <h3 id="chapter4"><%= @category.name %>になるには</h3>
+  <h3 id="chapter5"><%= @category.name %>に必要な資格・難易度</h3>
+  <h3 id="chapter6"><%= @category.name %>の給料・年収</h3>
+  <h3 id="chapter7"><%= @category.name %>のやりがい・楽しさ</h3>
+  <h3 id="chapter8"><%= @category.name %>の辛さ・大変さ</h3>
+  <h3 id="chapter9"><%= @category.name %>に向いている人</h3>
+  <h3 id="chapter10"><%= @category.name %>の志望動機</h3>
+  <h3 id="chapter11"><%= @category.name %>の雇用形態</h3>
+  <h3 id="chapter12"><%= @category.name %>の需要・求人</h3>
+  <h3 id="chapter13"><%= @category.name %>の現場と将来性</h3>
 </div>
 <div>
   <h3 id="chapter14"><%= @category.name %>として働いている方一覧</h3>
