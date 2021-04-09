@@ -1,17 +1,45 @@
-<h1>ユーザー詳細</h1>
+<div class="profile-head">
+  <h1><%= @user.name %>さんのプロフィール</h1>
+  <div class="profile-size">
+   <%if @user.image.present?%>
+    <%= image_tag @user.image, class: 'profile-image',width: '260', height: '260' %>
+   <% else %>
+    <%= image_tag 'chat1.png', class: 'profile-image',width: '260', height: '260' %>
+   <% end %>
+  </div>
+</div>
+<table boeder="1">
+  <thead>
+    <tr>
+      <th>職業</th>
+      <th> <%= @user.category.name %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>自己紹介</td>
+      <td>よろしくお願いします</td>
+    </tr>
+  </tbody>
+</table>
 
-<% if @user.id == current_user.id %>
 
-<% else %>
+    <%# <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+<% unless @user.id == current_user.id %>
   <% if @isRoom == true %>
-    <a href="/rooms/<%= @roomId %>">チャットへ</a>
+    <div class="chat-box">
+    <a class="btn bg-brown chat-btn" href="/rooms/<%= @roomId %>">チャットへ</a>
+    </div>
   <% else %>
     <%= form_for @room do |f| %>
       <%= fields_for @chat do |e| %>
         <%= e.hidden_field :user_id, value: @user.id %>
       <% end %>
-        <%= f.submit "チャットを始める" %>
+    <div class="chat-box">
+        <%= f.submit "チャットを始める",class: 'btn bg-brown' %>
+    </div>
       <%end%>
     <%end%>
   <%end%>
 
+<%= link_to 'プロフィールを編集する',edit_user_path(@user.id)%>
