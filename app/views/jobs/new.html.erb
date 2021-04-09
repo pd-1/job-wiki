@@ -1,5 +1,5 @@
-<h1>wiki投稿</h1>
-<%= form_with model:@job, local: true do |f|%>
+<h1>wiki新規投稿</h1>
+<%= form_with model:@job,url: jobs_path, local: true do |f|%>
   <div class="field">
     <%= f.label :name, "業種名" %><br />
     <%= f.text_field :name %>

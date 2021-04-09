@@ -1,0 +1,29 @@
+<div class="profile-head">
+  <h1><%= @user.name %>さんのプロフィール編集</h1>
+  <div class="profile-size">
+  <% if @user.image.present?%>
+    <%= image_tag @user.image, class: 'profile-image',width: '260', height: '260' %>
+    <% else %>
+    <%= image_tag 'chat1.png', class: 'profile-image',width: '260', height: '260' %>
+  <% end %>
+     <%= form_with model: @user,local: true do |f| %>
+        <%=f.label :image,"画像の登録"%>
+        <%= f.file_field :image, class: 'hidden' %>
+        <%= f.submit '登録', class: 'form-submit'%>
+    <% end %>
+  </div>
+</div>
+<table boeder="1">
+  <thead>
+    <tr>
+      <th>職業</th>
+      <th> <%= @user.category.name %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>自己紹介</td>
+      <td>よろしくお願いします</td>
+    </tr>
+  </tbody>
+</table>

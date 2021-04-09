@@ -5,44 +5,53 @@
   <span>がお話し中です</span>
 </div>
 
-<div class="overflow-scroll" id="list">
+<div class="container">
+ <div class="overflow-scroll" id="list">
 <!-- 自分のメッセージ -->
   <% @messages.each do |m| %>
   <% if m.user == current_user %>
-    <tr class="row justify-content-center">
-      <td class="col-2">
-        <%# <img src="/images/enjoy.jpg" link="image" class="profile-image"> %>
-      </td>
-      <!-- メッセージを右側に表示する -->
-      <td class="col-10">
-        <div class="col-1 float-right">
-          <%= m.user.name %> <br>
-        </div>      
+  <div class="d-flex justify-content-center">
+    <div class="row chat-chat">
+          <!-- メッセージを右側に表示する -->
+      <div class="col-10">
         <div class="says">
-        <p><%= safe_join(m.content.split("\n"),tag(:br)) %></p>
-        <span><%= l m.created_at, format: :short %></span>
-      </div>
-      </td>
-    </tr> 
-<!-- 相手のメッセージ -->
-  <%else%>     
-    <tr class="row justify-content-center">
-      <!-- メッセージを左側に表示する -->
-      <td class="col-10">
-        <div class="col-12 float-right">
-          <%= m.user.name %> <br>
-        </div>
-        <div class="other-user-says">
-          <p><%= safe_join(m.content.split("\n"),tag(:br)) %></p>
+          <p class="chat-message"><%= safe_join(m.content.split("\n"),tag(:br)) %></p>
           <span><%= l m.created_at, format: :short %></span>
         </div>
-      </td>
-       <td class="col-2">
-        <%# <img src="/images/cow.jpg" link="image" class="profile-image"> %>
-      </td>
-    </tr>
+      </div>
+      <div class="col-2 chat-icon">
+        <div>
+          <%= m.user.name %> <br>
+        </div>
+        <div class="chat-icon1">
+          <%= image_tag 'chat1.png', class: 'chat-image',width: '80', height: '80'%>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 相手のメッセージ -->
+  <%else%>    
+ <div class="d-flex justify-content-center">
+    <div class="row chat-chat">
+      <div class="col-2 chat-icon">
+        <div>
+          <%= m.user.name %> <br>
+        </div>
+        <div class="chat-icon1">
+          <%= image_tag 'chat1.png', class: 'chat-image',width: '80', height: '80'%>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="other-user-says">
+          <p class="chat-message"><%= safe_join(m.content.split("\n"),tag(:br)) %></p>
+          <span><%= l m.created_at, format: :short %></span>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
 <% end %>
+</div>
 </div>
 
 

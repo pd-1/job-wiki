@@ -1,6 +1,10 @@
 <div class="job-head">
-  <h1 class="job-title"><%= @job.name %>wiki</h1>
-<%= link_to '編集する',edit_job_path(@job.id), class: 'job-edit'%>
+  <h1 class="job-title"><%= @category.name %>wiki</h1>
+  <% if @job.blank?%>
+    <%= link_to '新規編集する',new_job_path, class: 'job-edit'%>
+  <%else%>
+    <%= link_to '編集する', edit_job_path(@job.ids), class: 'job-edit'%>
+  <%end%>
 </div>
     <%= render partial:'shared/contents'%>
 <div class="job-text">
@@ -20,8 +24,10 @@
   <h3 id="chapter13"><%= @job.name %>の現場と将来性</h3>
 </div>
 <div>
-  <h3 id="chapter14"><%= @job.name %>として働いている方一覧</h3>
-  <% @users.each do |user| %>
+  <h3 id="chapter14"><%= @category.name %>として働いている方一覧</h3>
+  <% unless @user.present?%>
+  <% @users.where.not(name: "Example User").each do |user| %>
   <h4><%= link_to user.name, user_path(user.id) %></h4>
+  <% end %>
   <% end %>
   </div>

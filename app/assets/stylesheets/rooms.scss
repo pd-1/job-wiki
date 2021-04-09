@@ -9,14 +9,12 @@
   font-size: 20px;
 }
 .says{
-  float: left;
-  display: inline-block;
   position: relative;
   width: calc(100% - 56px);
   margin: 1.5em 15px 1.5em 0;
-  padding: 7px 10px;
-  min-width: 120px;
-  max-width: 100%;
+  padding: 10px;
+  min-width: 800px;
+  max-width: 800px;
   color: #555;
   font-size: 16px;
   background: #e0edff;
@@ -37,8 +35,8 @@
   width: calc(100% - 56px);
   margin: 1.5em 0 1.5em 15px;
   padding: 7px 10px;
-  min-width: 120px;
-  max-width: 100%;
+  min-width: 800px;
+  max-width: 800px;
   color: #555;
   font-size: 16px;
   background: #e0edff;
@@ -64,4 +62,14 @@
 .chat-text{
   width: 70vw;
   height: 12vh;
+}
+.chat-image{
+  border-radius: 50%;
+  border: 2px solid black; 
+}
+.chat-icon{
+  text-align: center;
+}
+.chat-icon1{
+  margin-top: 5px;
 }

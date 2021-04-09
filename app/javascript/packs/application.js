@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../chat")
+// require("../category")
 import 'bootstrap';
 import '../stylesheets/application';
 

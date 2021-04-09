@@ -1,5 +1,6 @@
 function message () {
   const submit = document.getElementById("submit");
+  if (!submit){ return false;}
   submit.addEventListener("click", (e) => {
     e.preventDefault();
     const form = document.getElementById("form");
