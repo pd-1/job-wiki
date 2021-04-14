@@ -2,9 +2,9 @@
   <h1><%= @user.name %>さんのプロフィール</h1>
   <div class="profile-size">
    <%if @user.image.present?%>
-    <%= image_tag @user.image, class: 'profile-image',width: '260', height: '260' %>
+    <%= image_tag @user.image.url, class: 'profile-image',width: '260', height: '260' %>
    <% else %>
-    <%= image_tag 'chat1.png', class: 'profile-image',width: '260', height: '260' %>
+    <%= image_tag 'default.png', class: 'profile-image',width: '260', height: '260' %>
    <% end %>
   </div>
 </div>

@@ -1,4 +1,5 @@
 class Job < ApplicationRecord
+  belongs_to :category
   with_options presence: true do
     validates    :description
     validates    :active

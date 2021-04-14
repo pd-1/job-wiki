@@ -7,9 +7,17 @@ class User < ApplicationRecord
          has_many :chats
          has_many :messages
          belongs_to :category
-         has_one_attached :image
+         mount_uploader :image, ImageUploader
          with_options presence: true do
           validates :name
           validates :category_id, numericality: { other_than: 1 }
          end 
+
+         def self.guest
+          user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+            user.password = SecureRandom.urlsafe_base64
+            user.name = "ゲスト"
+            user.category_id = 2
+          end
+         end
 end

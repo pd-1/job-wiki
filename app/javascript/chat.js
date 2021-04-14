@@ -18,19 +18,25 @@ function message () {
       const formText = document.getElementById("content");
       const item = XHR.response.message;
       const html = `
-      <tr class="row justify-content-center">
-      <td class="col-2">
-      </td>
-      <td class="col-10">
-        <div class="col-1 float-right">
-          ${gon.user_name}
-        </div>      
-        <div class="says">
-        <p>${item.content}</p>
-        <span>${item.created_at}</span>
+      <div class="d-flex justify-content-center">
+      <div class="row chat-chat">
+        <div class="col-10">
+          <div class="says">
+            <p class="chat-message">${item.content}</p>
+            <span>${item.created_at}</span>
+          </div>
+        </div>
+        <div class="col-2 chat-icon">
+          <div>
+            ${gon.user_name} <br>
+          </div>
+          <div class="chat-icon1">
+            <img class="chat-image chat-image-size">
+          </div>
+        </div>
       </div>
-      </td>
-    </tr> `;
+    </div>
+      `;
     list.insertAdjacentHTML("beforeend",html);
     formText.value = "";
     // $('html').animate({ scrollTop: $('html')[0].scrollHeight});
