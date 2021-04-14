@@ -1,29 +1,75 @@
 <div class="job-head">
   <h1 class="job-title"><%= @category.name %>wiki</h1>
-  <% if @job.blank?%>
-    <%= link_to '新規編集する',new_job_path, class: 'job-edit'%>
-  <%else%>
-    <%= link_to '編集する', edit_job_path(@job.ids), class: 'job-edit'%>
+  <% if @category.id == current_user.category.id%>
+    <% if @job.blank?%>
+      <%= link_to '新規編集する',new_job_path, class: 'job-edit'%>
+    <%else%>
+      <%= link_to '編集する', edit_job_path(@job.ids), class: 'job-edit'%>
+    <%end%>
   <%end%>
 
 </div>
+
     <%= render partial:'shared/contents'%>
+
+  <% @job.each do |job|%>
 <div class="job-text">
-  <h3 id="chapter1"><%= @category.name %>の仕事内容</h3>
-  <p></p>
-  <h3 id="chapter2"><%= @category.name %>の就職先・活躍の場</h3>
-  <h3 id="chapter3"><%= @category.name %>の１日の流れ</h3>
-  <h3 id="chapter4"><%= @category.name %>になるには</h3>
-  <h3 id="chapter5"><%= @category.name %>に必要な資格・難易度</h3>
-  <h3 id="chapter6"><%= @category.name %>の給料・年収</h3>
-  <h3 id="chapter7"><%= @category.name %>のやりがい・楽しさ</h3>
-  <h3 id="chapter8"><%= @category.name %>の辛さ・大変さ</h3>
-  <h3 id="chapter9"><%= @category.name %>に向いている人</h3>
-  <h3 id="chapter10"><%= @category.name %>の志望動機</h3>
-  <h3 id="chapter11"><%= @category.name %>の雇用形態</h3>
-  <h3 id="chapter12"><%= @category.name %>の需要・求人</h3>
-  <h3 id="chapter13"><%= @category.name %>の現場と将来性</h3>
+  <ul class="job-subheading">
+    <div class="job-subheading-content">
+      <li><a id="chapter1" class="job-subheading-font"><%= @category.name %>の仕事内容</a></li>
+   </div>
+      <p class="job-text-box"><%= job.description %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter2" class="job-subheading-font"><%= @category.name %>の就職先・活躍の場</a></li>
+   </div>
+    <p class="job-text-box"><%= job.active %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter3" class="job-subheading-font"><%= @category.name %>の１日の流れ</a></li>
+   </div>
+    <p class="job-text-box"><%= job.flow %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter4" class="job-subheading-font"><%= @category.name %>になるには</a></li>
+   </div>
+    <p class="job-text-box"><%= job.become %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter5" class="job-subheading-font"><%= @category.name %>に必要な資格・難易度</a></li>
+   </div>
+    <p class="job-text-box"><%= job.qualification %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter6" class="job-subheading-font"><%= @category.name %>の給料・年収</a></li>
+   </div>
+    <p class="job-text-box"><%= job.salary %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter7" class="job-subheading-font"><%= @category.name %>のやりがい・楽しさ</a></li>
+   </div>
+    <p class="job-text-box"><%= job.rewarding %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter8" class="job-subheading-font"><%= @category.name %>の辛さ・大変さ</a></li>
+   </div>
+    <p class="job-text-box"><%= job.correct %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter9" class="job-subheading-font"><%= @category.name %>に向いている人</a></li>
+   </div>
+    <p class="job-text-box"><%= job.aspiring %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter10" class="job-subheading-font"><%= @category.name %>の志望動機</a></li>
+   </div>
+    <p class="job-text-box"><%= job.status %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter11" class="job-subheading-font"><%= @category.name %>の雇用形態</a></li>
+   </div>
+    <p class="job-text-box"><%= job.flow %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter12" class="job-subheading-font"><%= @category.name %>の需要・求人</a></li>
+   </div>
+    <p class="job-text-box"><%= job.demand %></p>
+    <div class="job-subheading-content">
+    <li><a id="chapter13" class="job-subheading-font"><%= @category.name %>の現場と将来性</a></li>
+   </div>
+    <p class="job-text-box"><%= job.future %></p>
+  </ul>
 </div>
+  <% end %>
 <div>
   <h3 id="chapter14"><%= @category.name %>として働いている方一覧</h3>
   <% unless @user.present?%>

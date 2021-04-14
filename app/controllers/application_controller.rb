@@ -13,7 +13,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:image,:category_id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:image,:image_cache,:category_id])
   end
 
 end
