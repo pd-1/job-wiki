@@ -21,15 +21,17 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control',id: 'inputEnail3' %>
       </div>
     </div>
+    
+    <div class="form-container">
+      <div class="form-group row">
+        <div class="col-sm-3">
+          職種選択
+        </div>
 
-    <div class="form-group row">
-      <div class="col-sm-3">
-        職業選択
-      </div>
-
-      <div class="col-sm-9 category_form">
-        <%= f.collection_select(:category_id, Category.all,:id,:name,{},{class: 'form-control',id: "parent"}) %>
-        <%= f.collection_select(:category_id, Category.all,:id,:name,{},{class: 'form-control',id: 'inputGenre3'}) %>
+        <div class="col-sm-9 category_form">
+          <%=f.collection_select :category_id, @category_parent_array || [], :id, :name,{prompt: "職業を選択してください"}, class: "select-default form-control", id: "parent_category", name: ''%>
+          <p class="category-p">※学生の方は職業を『学生』で登録してください</p>
+        </div>
       </div>
     </div>
 

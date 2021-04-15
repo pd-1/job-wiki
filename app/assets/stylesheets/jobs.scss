@@ -62,3 +62,45 @@
   font-size: 20px;
   margin: 10px 0;
 }
+
+.job-subheading{
+  text-align: center;  
+}
+.job-subheading-content{
+  margin: auto 30vw;
+  position: relative;
+
+}
+.job-subheading-font{
+  width: 30vw;
+  font-size: 30px;
+  color: black;
+}
+.job-subheading-font::after{
+  content:"";
+  display:block;
+  width: 140px;
+  height: 7px;
+  background-color: #b68973;
+  position:absolute;
+  bottom: -10px;
+  left: 220px;
+  border-radius: 10px; 
+}
+.job-text-box{
+  border: 1px solid #b68973;
+  margin: 30px;
+  padding: 20px;
+  height: 40vh;
+  text-align: left;
+  border-radius: 8px;
+}
+.job--edit-text-box{
+  border: 1px solid #b68973;
+  margin: 30px;
+  padding: 20px;
+  height: 40vh;
+  text-align: left;
+  border-radius: 8px;
+  width: 95vw;
+}

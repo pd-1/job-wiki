@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
   devise_scope :user do
-    get 'signup', to: 'devise/registrations#new', as: :get_category_childrennew_user_registration 
+    post 'user/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    get '/search', to: 'users/registrations#search',defaults: { format: 'json' }
   end
-  root to: 'home#index'
+  
   resources :jobs
   resources :users, only:[:show,:edit,:update]
   resources :rooms, only:[:create, :show,:index]
   resources :messages, only:[:create,:destroy]
+  post '/home/guest_sign_in', to: 'home#guest_sign_in'
 end
-
-# collection do
-  # get 'get_category_children', defaults: { format: 'json' }

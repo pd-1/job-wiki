@@ -73,3 +73,24 @@
 .chat-icon1{
   margin-top: 5px;
 }
+.chat-image-size{
+  width: 80px;
+  height: 80px;
+}
+
+// チャットルーム一覧
+.room-index-border{
+  border: 3px solid #b68973;
+  border-radius: 8px;
+  height: 30vh;
+  width: 30vw;
+  margin: 20px;
+}
+.room-index-contain{
+  padding: 25px;
+  text-align: center;
+  font-size: 28px;
+}
+.room-index-chat{
+  margin-top: 20px;
+}

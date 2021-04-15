@@ -1,61 +1,79 @@
-<h1>編集ページ</h1>
+<div class="profile-head">
+<h1><%= @category.name %>の編集ページ</h1>
+</div>
 <%= form_with model: @job, local: true do |f| %>
-    <div class="field">
-    <%= f.label :description, "コンテント"%><br /> 
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :active, "コンテント"%><br /> 
-    <%= f.text_area :active %>
-  </div>
-  <div class="field">
-    <%= f.label :flow, "コンテント"%><br /> 
-    <%= f.text_area :flow %>
-  </div>
-  <div class="field">
-    <%= f.label :become, "コンテント"%><br /> 
-    <%= f.text_area :become %>
-  </div>
-  <div class="field">
-    <%= f.label :qualification, "コンテント"%><br /> 
-    <%= f.text_area :qualification %>
-  </div>
-  <div class="field">
-    <%= f.label :salary, "コンテント"%><br /> 
-    <%= f.text_area :salary %>
-  </div>
-  <div class="field">
-    <%= f.label :rewarding, "コンテント"%><br /> 
-    <%= f.text_area :rewarding %>
-  </div>
-  <div class="field">
-    <%= f.label :busy, "コンテント"%><br /> 
-    <%= f.text_area :busy %>
-  </div>
-  <div class="field">
-    <%= f.label :correct, "コンテント"%><br /> 
-    <%= f.text_area :correct %>
-  </div>
-  <div class="field">
-    <%= f.label :aspiring, "コンテント"%><br /> 
-    <%= f.text_area :aspiring %>
-  </div>
-  <div class="field">
-    <%= f.label :status, "コンテント"%><br /> 
-    <%= f.text_area :status %>
-  </div>
-  <div class="field">
-    <%= f.label :demand, "コンテント"%><br /> 
-    <%= f.text_area :demand %>
-  </div>
-  <div class="field">
-    <%= f.label :future, "コンテント"%><br /> 
-    <%= f.text_area :future %>
-  </div>
+
+<div class="job-text">
+  <ul class="job-subheading">
+    <div class="job-subheading-content">
+      <li><a class="job-subheading-font"><%= @category.name %>の仕事内容</a></li>
+   </div>
+    <%= f.text_area :description ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a class="job-subheading-font"><%= @category.name %>の就職先・活躍の場</a></li>
+   </div>
+    <%= f.text_area :active ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter3" class="job-subheading-font"><%= @category.name %>の１日の流れ</a></li>
+   </div>
+    <%= f.text_area :flow ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter4" class="job-subheading-font"><%= @category.name %>になるには</a></li>
+   </div>
+    <%= f.text_area :become ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter5" class="job-subheading-font"><%= @category.name %>に必要な資格・難易度</a></li>
+   </div>
+    <%= f.text_area :qualification ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter6" class="job-subheading-font"><%= @category.name %>の給料・年収</a></li>
+   </div>
+    <%= f.text_area :salary ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter7" class="job-subheading-font"><%= @category.name %>のやりがい・楽しさ</a></li>
+   </div>
+    <%= f.text_area :rewarding ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter8" class="job-subheading-font"><%= @category.name %>の辛さ・大変さ</a></li>
+   </div>
+    <%= f.text_area :busy ,class: "job--edit-text-box"%>
+    
+    <div class="job-subheading-content">
+    <li><a id="chapter9" class="job-subheading-font"><%= @category.name %>に向いている人</a></li>
+   </div>
+    <%= f.text_area :correct ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter10" class="job-subheading-font"><%= @category.name %>の志望動機</a></li>
+   </div>
+    <%= f.text_area :aspiring ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter11" class="job-subheading-font"><%= @category.name %>の雇用形態</a></li>
+   </div>
+    <%= f.text_area :status ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter12" class="job-subheading-font"><%= @category.name %>の需要・求人</a></li>
+   </div>
+    <%= f.text_area :demand ,class: "job--edit-text-box"%>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter13" class="job-subheading-font"><%= @category.name %>の現場と将来性</a></li>
+   </div>
+    <%= f.text_area :future ,class: "job--edit-text-box"%>
+  </ul>
 
   <div>
     <%= f.submit '送信' %>
-    <%= f.hidden_field :category_id, value: @children.id %>
-
+    <% f.hidden_field :category_id,value: @category.id %>
+  </div>
   </div>
 <%end%>

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @user = User.find(params[:id])
     @currentUserChat=Chat.where(user_id: current_user.id)
@@ -35,6 +37,6 @@ end
   private
 
   def user_params
-    params.require(:user).permit(:name, :email,:image)
+    params.require(:user).permit(:name, :email,:image,:image_cache)
   end
 end

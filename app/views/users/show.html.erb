@@ -4,7 +4,7 @@
    <%if @user.image.present?%>
     <%= image_tag @user.image, class: 'profile-image',width: '260', height: '260' %>
    <% else %>
-    <%= image_tag 'chat1.png', class: 'profile-image',width: '260', height: '260' %>
+    <%= image_tag 'default.png', class: 'profile-image',width: '260', height: '260' %>
    <% end %>
   </div>
 </div>
@@ -23,8 +23,6 @@
   </tbody>
 </table>
 
-
-    <%# <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
 <% unless @user.id == current_user.id %>
   <% if @isRoom == true %>
     <div class="chat-box">

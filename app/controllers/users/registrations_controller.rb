@@ -3,25 +3,19 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-
+    before_action :ensure_normal_user, only: :destroy
 def new
   @user = User.new
-  @category_parent_array = ["職業を選択してください"]
-  Category.where(ancestry: nil).each do |parent|
-    @category_parent_array << parent.name
-  end
+  @category_parent_array = Category.all.order("id ASC").limit(15)
 end
 
-   # 親カテゴリーが選択された後に動くアクション
-   def get_category_children
-      #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-      @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
-   end
-
-   # 子カテゴリーが選択された後に動くアクション
-   def get_category_grandchildren
-      #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
-      @category_grandchildren = Category.find("#{params[:child_id]}").children
+   def search
+    respond_to do |format|
+      format.html
+      format.json do  
+         @children = Category.find(params[:parent_id]).children
+      end
+    end
    end
 
 
@@ -60,6 +54,10 @@ end
   # end
 
   # protected
+
+  def params_user
+    params.require(:user).permit(:name,:email,:password,:password,:password_confirmation,:category_id,:image)
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
