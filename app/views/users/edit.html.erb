@@ -4,7 +4,7 @@
   <% if @user.image.present?%>
     <%= image_tag @user.image, class: 'profile-image',width: '260', height: '260' %>
     <% else %>
-    <%= image_tag 'chat1.png', class: 'profile-image',width: '260', height: '260' %>
+    <%= image_tag 'default.png', class: 'profile-image',width: '260', height: '260' %>
   <% end %>
      <%= form_with model: @user,local: true do |f| %>
         <%=f.label :image,"画像の登録"%>

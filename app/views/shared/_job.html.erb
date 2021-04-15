@@ -23,13 +23,13 @@
     <div class="d-flex flex-column">
     <% @parents.where.not(id: 1).each do |parent|%>
       <div class="col-12">
-        <div class="job-genre-details">
-          <h4 id="chapter#{parent.id}"><%= parent.name %></h4>
-        </div>
+        <ul class="job-genre-details">
+          <li><%= parent.name %></li>
+        </ul>
           <% parent.children.each do |child|%>
-          <div>
-            <h6><%=link_to child.name, job_path(child.id) %></h6>
-          </div>
+          <ul>
+            <li><%=link_to child.name, job_path(child.id) %></li>
+          </ul>
           <% end %>
       </div>
     <% end %>
