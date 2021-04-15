@@ -24,6 +24,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @user = User.where(params[:user_id])
     gon.user_name = current_user.name
+    gon.user_image = current_user.image
     if Chat.where(user_id: current_user.id, room_id: @room.id).present?
       @messages = @room.messages
       @message = Message.new
