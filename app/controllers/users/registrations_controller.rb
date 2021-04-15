@@ -18,11 +18,6 @@ end
     end
    end
 
-   def create
-     @user = User.create(params_user)
-     redirect_to root_path
-   end
-
 
   #GET /resource/sign_up
   # def new
@@ -61,7 +56,7 @@ end
   # protected
 
   def params_user
-    params.require(:user).permit(:name,:email,:password,:password,:password_confirmation,:category_id,:image,:image_cache)
+    params.require(:user).permit(:name,:email,:password,:password,:password_confirmation,:category_id,:image)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
