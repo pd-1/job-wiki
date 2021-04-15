@@ -42,7 +42,7 @@ User.create!(name:  "Example User",
   Category.all.each do |category|
   Job.create!(
     category_id: category.id,
-    description: "未入力です",
+    description: "この仕事の主な内容は〜〜になります。〜〜が必要となるような職種です。",
     active:"未入力です",
     flow:"未入力です",
     become:"未入力です",
