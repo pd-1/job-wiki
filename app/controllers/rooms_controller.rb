@@ -1,6 +1,18 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @user = User.all
+    @currentChats = current_user.chats
+    myRoomIds = []
+  
+    @currentChats.each do |chat|
+      myRoomIds << chat.room.id
+    end
+  
+    @anotherChats = Chat.where(room_id: myRoomIds).where(user_id: @user.ids).where.not(user_id: current_user.id)
+  end
+
   def create
     @room = Room.create
     @chat1 = Chat.create(room_id: @room.id, user_id: current_user.id)

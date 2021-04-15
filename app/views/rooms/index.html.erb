@@ -1,1 +1,23 @@
 <h1>チャットルーム一覧</h1>
+
+<%if @anotherChats.present?%>
+<div class="conteiner">
+  <div class="d-flex flex-wrap">
+    <% @anotherChats.each do |e| %>
+    <div class="row">
+      <div class="col-4">
+        <div class="room-index-border">
+          <div class="room-index-contain">
+          <ul>
+            <li><%= link_to e.user.name, user_path(e.user.id) %>さん</li>
+            <li>職業：<%= link_to e.user.category.name, job_path(e.user.category.id) %></li>
+            <li class="room-index-chat"><%= link_to 'チャットルームへ', room_path(e.room.id),class: 'btn bg-brown' %></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>  
+</div>
+    <% end %>
