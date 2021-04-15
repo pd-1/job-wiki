@@ -31,7 +31,7 @@ function message () {
             ${gon.user_name} <br>
           </div>
           <div class="chat-icon1">
-            <img class="chat-image chat-image-size">
+            <img src="default.png" alt="ユーザー画像" class="chat-image chat-image-size">
           </div>
         </div>
       </div>
@@ -39,7 +39,6 @@ function message () {
       `;
     list.insertAdjacentHTML("beforeend",html);
     formText.value = "";
-    // $('html').animate({ scrollTop: $('html')[0].scrollHeight});
         list.scrollTop = list.scrollHeight;
 
   };

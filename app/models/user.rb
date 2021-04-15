@@ -7,10 +7,10 @@ class User < ApplicationRecord
          has_many :chats
          has_many :messages
          belongs_to :category
-         mount_uploader :image, ImageUploader
+         has_one_attached :image
          with_options presence: true do
           validates :name
-          validates :category_id, numericality: { other_than: 1 }
+          validates :category_id
          end 
 
          def self.guest

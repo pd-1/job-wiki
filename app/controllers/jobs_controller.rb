@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @jobs = Job.all
     @parents = Category.all.order("id ASC").limit(15)
@@ -10,26 +10,23 @@ class JobsController < ApplicationController
     @users = User.where(category_id: @category.id)
     @job = Job.where(category_id: @category.id)
   end
-  
- def new
-  @job = Job.new
- end
-
-  def create
-    @job = Job.create(job_params)
-    redirect_to jobs_path
-  end
-
 
   def edit
     @category = Category.find(params[:id])
+    if current_user.category_id == @category.id
     @job = Job.find(params[:id])
+    else
+      redirect_to jobs_path
+    end
   end
 
   def update
     @job = Job.find(params[:id])
-    @job.update(job_params)
-    redirect_to jobs_path
+    if @job.update(job_params)
+      redirect_to job_path(@job.category_id)
+    else
+       redirect_to jobs_path
+    end
   end
 
   private

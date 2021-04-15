@@ -29,7 +29,8 @@
         </div>
 
         <div class="col-sm-9 category_form">
-          <%=f.collection_select :category_id, @category_parent_array, :id, :name,{prompt: "職業を選択してください"}, class: "select-default form-control", id: "parent_category", name: ''%>
+          <%=f.collection_select :category_id, @category_parent_array || [], :id, :name,{prompt: "職業を選択してください"}, class: "select-default form-control", id: "parent_category", name: ''%>
+          <p class="category-p">※学生の方は職業を『学生』で登録してください</p>
         </div>
       </div>
     </div>
