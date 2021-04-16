@@ -23,6 +23,7 @@
   display: contents;
 }
 
+@import "bootstrap"; 
 
 /*------------------------------------
 - COLOR brown
