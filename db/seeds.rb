@@ -15,6 +15,7 @@ game = Category.create(name: "漫画・アニメ・ゲーム")
 design = Category.create(name: "デザイン・広告・アート")
 web = Category.create(name: "IT・Web")
 public_service = Category.create(name: "公務員")
+student_1 = student.children.create(name: "学生")
 medicine_1 = medicine.children.create([{name: "医師"},{name: "看護師"},{name: "歯科医師"},{name: "歯科衛生士"},{name: "歯科助手"},{name: "薬剤師"},{name: "獣医"},{name: "動物看護師"}])
 welfare_1 = welfare.children.create([{name: "心理学者"},{name: "理学療法士"},{name: "介護福祉士"},{name: "介護職員"},{name: "セラピスト"}])
 fashion_1 = fashion.children.create([{name: "美容師"},{name: "ネイリスト"},{name: "化粧品メーカー社員"},{name: "スタイリスト"},{name: "ショップ店員"}])
@@ -32,28 +33,28 @@ web_1 = web.children.create([{name: "プログラマー"},{name: "ITエンジニ
 public_service_1 = public_service.children.create([{name: "国家公務員"},{name: "地方公務員"},{name: "自衛隊"},{name: "警察官"},{name: "地方公務員"},{name: "救急救命士"}])
 
 # メインのサンプルユーザーを1人作成する
+Category.all.each do |category|
+Job.create!(
+  category_id: category.id,
+  description: "この仕事の主な内容は〜〜になります。〜〜が必要となるような職種です。",
+  active:"未入力です",
+  flow:"未入力です",
+  become:"未入力です",
+  qualification:"未入力です",
+  salary:"未入力です",
+  rewarding:"未入力です",
+  busy:"未入力です",
+  correct:"未入力です",
+  aspiring:"未入力です",
+  status:"未入力です",
+  demand:"未入力です",
+  future:"未入力です"
+)
+end
 User.create!(name:  "Example User",
-  email: "example@test",
-  category_id: 1,
+  email: "example@example",
+  category_id: 17,
   password:              "foobar",
   password_confirmation: "foobar",
   admin: true)
   
-  Category.all.each do |category|
-  Job.create!(
-    category_id: category.id,
-    description: "この仕事の主な内容は〜〜になります。〜〜が必要となるような職種です。",
-    active:"未入力です",
-    flow:"未入力です",
-    become:"未入力です",
-    qualification:"未入力です",
-    salary:"未入力です",
-    rewarding:"未入力です",
-    busy:"未入力です",
-    correct:"未入力です",
-    aspiring:"未入力です",
-    status:"未入力です",
-    demand:"未入力です",
-    future:"未入力です"
-  )
-end
