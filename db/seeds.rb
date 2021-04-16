@@ -32,6 +32,24 @@ web_1 = web.children.create([{name: "プログラマー"},{name: "ITエンジニ
 public_service_1 = public_service.children.create([{name: "国家公務員"},{name: "地方公務員"},{name: "自衛隊"},{name: "警察官"},{name: "地方公務員"},{name: "救急救命士"}])
 
 # メインのサンプルユーザーを1人作成する
+Category.all.each do |category|
+Job.create!(
+  category_id: category.id,
+  description: "この仕事の主な内容は〜〜になります。〜〜が必要となるような職種です。",
+  active:"未入力です",
+  flow:"未入力です",
+  become:"未入力です",
+  qualification:"未入力です",
+  salary:"未入力です",
+  rewarding:"未入力です",
+  busy:"未入力です",
+  correct:"未入力です",
+  aspiring:"未入力です",
+  status:"未入力です",
+  demand:"未入力です",
+  future:"未入力です"
+)
+end
 User.create!(name:  "Example User",
   email: "example@test",
   category_id: 1,
@@ -39,21 +57,3 @@ User.create!(name:  "Example User",
   password_confirmation: "foobar",
   admin: true)
   
-  Category.all.each do |category|
-  Job.create!(
-    category_id: category.id,
-    description: "この仕事の主な内容は〜〜になります。〜〜が必要となるような職種です。",
-    active:"未入力です",
-    flow:"未入力です",
-    become:"未入力です",
-    qualification:"未入力です",
-    salary:"未入力です",
-    rewarding:"未入力です",
-    busy:"未入力です",
-    correct:"未入力です",
-    aspiring:"未入力です",
-    status:"未入力です",
-    demand:"未入力です",
-    future:"未入力です"
-  )
-end
