@@ -1,5 +1,9 @@
 <header class="d-flex justify-content-between .border-brown header" >
+    <% if user_signed_in?  %>
   <h1><%= link_to "Job Wiki", jobs_path, class: :title %></h1>
+    <%else%>
+  <h1><%= link_to "Job Wiki", root_path, class: :title %></h1>
+    <%end%>
   <ul class="nav">
     <% if user_signed_in?  %>
     <li><%= link_to current_user.name, user_path(current_user.id)%>がログイン中です </li>
