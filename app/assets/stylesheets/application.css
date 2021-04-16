@@ -23,7 +23,7 @@
   display: contents;
 }
 
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "bootstrap"; 
 
 /*------------------------------------
 - COLOR brown
