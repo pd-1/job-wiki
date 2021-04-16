@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     before_action :ensure_normal_user, only: :destroy
 def new
   @user = User.new
-  @category_parent_array = Category.all.order("id ASC").limit(15)
+  @category_parent_array = Category.all.order("id ASC").limit(16)
 end
 
    def search

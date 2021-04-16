@@ -67,14 +67,17 @@
     <li><a id="chapter13" class="job-subheading-font"><%= @category.name %>の現場と将来性</a></li>
    </div>
     <p class="job-text-box"><%= job.future %></p>
+
+    <div class="job-subheading-content">
+    <li><a id="chapter14" class="job-subheading-font"><%= @category.name %>として働いている方々</a></li>
+   </div>
+     <% if @user.present?%>
+         <p class="job-text-box">まだいません</p>
+         <% else %>
+       <% @users.where.not(name: "Example User").each do |user| %>
+       <p class="job-text-box"><%= link_to user.name, user_path(user.id) %></p>
+         <% end %>
+         <% end %>
   </ul>
 </div>
   <% end %>
-<div>
-  <h3 id="chapter14"><%= @category.name %>として働いている方一覧</h3>
-  <% unless @user.present?%>
-  <% @users.where.not(name: "Example User").each do |user| %>
-  <h4><%= link_to user.name, user_path(user.id) %></h4>
-  <% end %>
-  <% end %>
-  </div>

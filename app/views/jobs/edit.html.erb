@@ -71,8 +71,8 @@
     <%= f.text_area :future ,class: "job--edit-text-box"%>
   </ul>
 
-  <div>
-    <%= f.submit '送信' %>
+  <div class="edit-button">
+    <%= f.submit '送信する' ,class: 'btn bg-brown'%>
     <% f.hidden_field :category_id,value: @category.id %>
   </div>
   </div>

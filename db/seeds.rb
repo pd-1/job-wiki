@@ -34,7 +34,7 @@ public_service_1 = public_service.children.create([{name: "国家公務員"},{na
 # メインのサンプルユーザーを1人作成する
 User.create!(name:  "Example User",
   email: "example@test",
-  category_id: 17,
+  category_id: 1,
   password:              "foobar",
   password_confirmation: "foobar",
   admin: true)

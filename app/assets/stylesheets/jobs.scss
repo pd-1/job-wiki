@@ -37,6 +37,10 @@
   width: 80vw;
   padding: 10px;
 }
+.job-genre-children li{
+  margin-left: 10px;
+  padding-top: 10px;
+}
 // 職業詳細
 .job-edit{
   font-size: 15px;
@@ -103,4 +107,8 @@
   text-align: left;
   border-radius: 8px;
   width: 95vw;
+}
+
+.edit-button{
+  text-align: center;
 }
