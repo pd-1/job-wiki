@@ -15,7 +15,6 @@ $(function(){
                       </div>
                         <div class="col-sm-9 category_form">
                           <select class="form-control" id="child_category" name="user[category_id]">
-                            <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           <select>
                           </div>
