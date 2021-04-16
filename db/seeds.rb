@@ -51,10 +51,4 @@ Job.create!(
   future:"未入力です"
 )
 end
-User.create!(name:  "Example User",
-  email: "example@example",
-  category_id: 1,
-  password:              "foobar",
-  password_confirmation: "foobar",
-  admin: true)
   
