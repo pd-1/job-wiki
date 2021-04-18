@@ -3,10 +3,8 @@ class HomeController < ApplicationController
   end
 
   def new_guest
-    user = User.find_or_create_by(email: 'guest1@example.com') do |user|
-        user.password = 'test1234'
-        user.name = "ゲストユーザー"
-        user.category_id = 17
+    user = User.find_or_create_by(name: 'ゲストユーザー',email: 'guest@example.com',category_id: 17) do |user|
+        user.password = 'SecureRandom.urlsafe_base64'
     end
     sign_in user
     redirect_to jobs_path, notice: 'ゲストユーザーとしてログインしました。'
