@@ -66,9 +66,11 @@
     <li><a id="chapter14" class="job-subheading-font"><%= @category.name %>として働いている方々</a></li>
    </div>
      <% if @user.blank?%>
-       <% @users.where.not(name: "Example User").each do |user| %>
-       <p class="job-text-box"><%= link_to user.name, user_path(user.id) %></p>
+       <p class="job-text-box">
+       <% @users.where.not(name: current_user.name).each do |user| %>
+       <%= link_to user.name, user_path(user.id) %>さん
          <% end %>
+       </p>
      <% else %>
         <p class="job-text-box">まだ登録済みのユーザーが存在しません</p>
      <% end %>
