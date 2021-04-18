@@ -51,3 +51,11 @@ Job.create!(
   future:"〜〜として働くことの将来性は、〜〜のように考えられます。"
 )
 end
+
+User.create!(name: 'ゲストユーザー',
+             email: 'guest@example.com',
+             password: 'test1234',
+             password_confirmation: 'test1234',
+             category_id: 17,
+             created_at: Time.zone.now,
+             updated_at: Time.zone.now)
