@@ -2,7 +2,7 @@
   <div class="row">
     <div class="job_wrapper">
       <div class="d-flex flex-wrap">
-        <% @parents.where.not(id: 1).each do |parent|%>
+        <% @parents.where.not(name: "学生").each do |parent|%>
           <div class="col-4">
             <div class="job-genres">
                 <a href="#chapter<%= parent.id %>"><%= parent.name %></a>
@@ -21,7 +21,7 @@
 <div class="container">
   <div class="row", style="margin-top: 10px;">
     <div class="d-flex flex-column">
-    <% @parents.where.not(id: 1).each do |parent|%>
+    <% @parents.where.not(name: "学生").each do |parent|%>
       <div class="col-12">
         <ul class="job-genre-details">          
           <li><a id="chapter<%= parent.id %>"><%= parent.name %></a></li>
