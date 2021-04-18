@@ -33,7 +33,7 @@ web_1 = web.children.create([{name: "プログラマー"},{name: "ITエンジニ
 public_service_1 = public_service.children.create([{name: "国家公務員"},{name: "地方公務員"},{name: "自衛隊"},{name: "警察官"},{name: "地方公務員"},{name: "救急救命士"}])
 
 # メインのサンプルユーザーを1人作成する
-Category.all.each do |category|
+Category.where.not(ancestry: nil).where.not(name: "学生").all.each do |category|
 Job.create!(
   category_id: category.id,
   description: "この仕事の主な内容は〜〜になります。〜〜が必要となるような職種です。",
@@ -51,10 +51,3 @@ Job.create!(
   future:"未入力です"
 )
 end
-User.create!(name:  "Example User",
-  email: "example@example",
-  category_id: 17,
-  password:              "foobar",
-  password_confirmation: "foobar",
-  admin: true)
-  

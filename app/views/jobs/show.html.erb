@@ -1,83 +1,76 @@
 <div class="job-head">
   <h1 class="job-title"><%= @category.name %>wiki</h1>
-  <% if @category.id == current_user.category.id%>
-    <% if @job.blank?%>
-      <%= link_to '新規編集する',new_job_path, class: 'job-edit'%>
-    <%else%>
-      <%= link_to '編集する', edit_job_path(@job.ids), class: 'job-edit'%>
-    <%end%>
+  <% if @category.id == current_user.category_id%>
+      <%= link_to '編集する', edit_job_path(@job.category.id), class: 'job-edit'%>
   <%end%>
 
 </div>
 
     <%= render partial:'shared/contents'%>
 
-  <% @job.each do |job|%>
 <div class="job-text">
   <ul class="job-subheading">
     <div class="job-subheading-content">
       <li><a id="chapter1" class="job-subheading-font"><%= @category.name %>の仕事内容</a></li>
    </div>
-      <p class="job-text-box"><%= job.description %></p>
+      <p class="job-text-box"><%= @job.description %></p>
     <div class="job-subheading-content">
     <li><a id="chapter2" class="job-subheading-font"><%= @category.name %>の就職先・活躍の場</a></li>
    </div>
-    <p class="job-text-box"><%= job.active %></p>
+    <p class="job-text-box"><%= @job.active %></p>
     <div class="job-subheading-content">
     <li><a id="chapter3" class="job-subheading-font"><%= @category.name %>の１日の流れ</a></li>
    </div>
-    <p class="job-text-box"><%= job.flow %></p>
+    <p class="job-text-box"><%= @job.flow %></p>
     <div class="job-subheading-content">
     <li><a id="chapter4" class="job-subheading-font"><%= @category.name %>になるには</a></li>
    </div>
-    <p class="job-text-box"><%= job.become %></p>
+    <p class="job-text-box"><%= @job.become %></p>
     <div class="job-subheading-content">
     <li><a id="chapter5" class="job-subheading-font"><%= @category.name %>に必要な資格・難易度</a></li>
    </div>
-    <p class="job-text-box"><%= job.qualification %></p>
+    <p class="job-text-box"><%= @job.qualification %></p>
     <div class="job-subheading-content">
     <li><a id="chapter6" class="job-subheading-font"><%= @category.name %>の給料・年収</a></li>
    </div>
-    <p class="job-text-box"><%= job.salary %></p>
+    <p class="job-text-box"><%= @job.salary %></p>
     <div class="job-subheading-content">
     <li><a id="chapter7" class="job-subheading-font"><%= @category.name %>のやりがい・楽しさ</a></li>
    </div>
-    <p class="job-text-box"><%= job.rewarding %></p>
+    <p class="job-text-box"><%= @job.rewarding %></p>
     <div class="job-subheading-content">
     <li><a id="chapter8" class="job-subheading-font"><%= @category.name %>の辛さ・大変さ</a></li>
    </div>
-    <p class="job-text-box"><%= job.correct %></p>
+    <p class="job-text-box"><%= @job.correct %></p>
     <div class="job-subheading-content">
     <li><a id="chapter9" class="job-subheading-font"><%= @category.name %>に向いている人</a></li>
    </div>
-    <p class="job-text-box"><%= job.aspiring %></p>
+    <p class="job-text-box"><%= @job.aspiring %></p>
     <div class="job-subheading-content">
     <li><a id="chapter10" class="job-subheading-font"><%= @category.name %>の志望動機</a></li>
    </div>
-    <p class="job-text-box"><%= job.status %></p>
+    <p class="job-text-box"><%= @job.status %></p>
     <div class="job-subheading-content">
     <li><a id="chapter11" class="job-subheading-font"><%= @category.name %>の雇用形態</a></li>
    </div>
-    <p class="job-text-box"><%= job.flow %></p>
+    <p class="job-text-box"><%= @job.flow %></p>
     <div class="job-subheading-content">
     <li><a id="chapter12" class="job-subheading-font"><%= @category.name %>の需要・求人</a></li>
    </div>
-    <p class="job-text-box"><%= job.demand %></p>
+    <p class="job-text-box"><%= @job.demand %></p>
     <div class="job-subheading-content">
     <li><a id="chapter13" class="job-subheading-font"><%= @category.name %>の現場と将来性</a></li>
    </div>
-    <p class="job-text-box"><%= job.future %></p>
-
+    <p class="job-text-box"><%= @job.future %></p>
     <div class="job-subheading-content">
     <li><a id="chapter14" class="job-subheading-font"><%= @category.name %>として働いている方々</a></li>
    </div>
-     <% if @user.present?%>
-         <p class="job-text-box">まだいません</p>
-         <% else %>
+     <% if @user.blank?%>
        <% @users.where.not(name: "Example User").each do |user| %>
        <p class="job-text-box"><%= link_to user.name, user_path(user.id) %></p>
          <% end %>
-         <% end %>
+     <% else %>
+        <p class="job-text-box">まだ登録済みのユーザーが存在しません</p>
+     <% end %>
   </ul>
 </div>
-  <% end %>

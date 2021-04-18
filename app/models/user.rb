@@ -12,12 +12,5 @@ class User < ApplicationRecord
           validates :name
           validates :category_id
          end 
-
-         def self.guest
-          user = User.find_or_create_by!(email: 'guest@example.com') do |user|
-            user.password = SecureRandom.urlsafe_base64
-            user.name = "ゲスト"
-            user.category_id = 17
-          end
-         end
+         validates :password,format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
 end

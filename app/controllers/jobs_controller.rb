@@ -2,19 +2,19 @@ class JobsController < ApplicationController
   before_action :authenticate_user!
   def index
     @jobs = Job.all
-    @parents = Category.all.order("id ASC").limit(15)
+    @parents = Category.where(ancestry: nil)
   end
 
   def show
     @category = Category.find(params[:id])
     @users = User.where(category_id: @category.id)
-    @job = Job.where(category_id: @category.id)
+    @job = Job.find_by(category_id: @category.id)
   end
 
   def edit
-    @category = Category.find(params[:id])
+       @category = Category.find(params[:id])
     if current_user.category_id == @category.id
-    @job = Job.find(params[:id])
+      @job = Job.find_by(category_id: @category.id)
     else
       redirect_to jobs_path
     end

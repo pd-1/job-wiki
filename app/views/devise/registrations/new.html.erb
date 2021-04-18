@@ -25,11 +25,11 @@
     <div class="form-container">
       <div class="form-group row">
         <div class="col-sm-3">
-          職種選択
+          <%= f.label :category_id, "職業選択" %>
         </div>
 
         <div class="col-sm-9 category_form">
-          <%=f.collection_select :category_id, @category_parent_array || [], :id, :name,{prompt: "職業を選択してください"}, class: "select-default form-control", id: "parent_category", name: ''%>
+          <%=f.collection_select :category_id, @category_parent_array || [], :id, :name,{prompt: "職業を選択してください"}, class: "select-default form-control", id: "parent_category"%>
           <p class="category-p">※学生の方は職業を『学生』で登録してください</p>
         </div>
       </div>
@@ -40,7 +40,7 @@
       <div class="col-sm-3">
         <%= f.label :password,for:'inputPassword3',class: 'control-label'  %>
         <% if @minimum_password_length %>
-        <div>(<%= @minimum_password_length %> 文字以上)</div>
+        <div>(英数字混合で<%= @minimum_password_length %> 文字以上)</div>
       </div>
        <% end %>
       <div class="col-sm-9">

@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     before_action :ensure_normal_user, only: :destroy
 def new
   @user = User.new
-  @category_parent_array = Category.all.order("id ASC").limit(16)
+  @category_parent_array = Category.where(ancestry: nil)
 end
 
    def search
@@ -54,10 +54,6 @@ end
   # end
 
   # protected
-
-  def params_user
-    params.require(:user).permit(:name,:email,:password,:password,:password_confirmation,:category_id,:image)
-  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

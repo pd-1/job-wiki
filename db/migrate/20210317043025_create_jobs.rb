@@ -3,7 +3,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
     create_table :jobs do |t|
 
       t.timestamps
-      t.integer :category_id, null: false
+      t.references  :category,            foreign_key: true
       t.text :description,  null: false 
       t.text :active,  null: false 
       t.text :flow,  null: false 
