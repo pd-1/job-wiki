@@ -2,6 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  protect_from_forgery with: :exception, only: :guest_sign_in
 
   def guest_sign_in
     user = User.guest
