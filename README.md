@@ -1,26 +1,27 @@
 # Job-Wiki
   それぞれの業界の方々がみんなで作成した職業のwikiを見ることができる学生向けのアプリです。
   またwikiの閲覧だけでなく登録している方と実際にチャットでやりとりができます。
+
 <a href="https://gyazo.com/5edcbe602af443e40995d9c7070675c5"><img src="https://i.gyazo.com/5edcbe602af443e40995d9c7070675c5.jpg" alt="Image from Gyazo" width="1438"/></a># URL
 
   https://job-wiki-11.herokuapp.com/
-  HOME画面の株のゲストログインで閲覧することが可能です。
+  HOME画面の下部のゲストログインで閲覧することが可能です。
 
-  ・Ruby 2.6.5
-  ・Ruby on Rails 6.0.3.6
-  ・Javascript
-  ・bootstrap
-  ・MySQL 14.14
-  ・heroku
+  *Ruby 2.6.5
+  *Ruby on Rails 6.0.3.6
+  *Javascript
+  *bootstrap
+  *MySQL 14.14
+  *heroku
 
 # 機能一覧
-  ・ユーザー登録、ログイン機能(devise)
-  ・職業編集機能
-  ・チャット機能(Ajax)
+  *ユーザー登録、ログイン機能(devise)
+  *職業編集機能
+  *チャット機能(Ajax)
 #  テスト
-  ・単体テスト
-  ・機能テスト
-  ・統合テスト
+  *単体テスト
+  *機能テスト
+  *統合テスト
 
 # テーブル設計
 
