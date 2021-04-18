@@ -13,13 +13,4 @@ class User < ApplicationRecord
           validates :category_id
          end 
          validates :password,format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
-
-         def self.guest
-          find_or_create_by!(email: 'guest@example.com') do |user|
-            user.password = SecureRandom.urlsafe_base64
-            user.password = 'SecureRandom.urlsafe_base64'
-            user.name = "ゲストユーザー"
-            user.category_id = 17
-          end
-        end
 end
