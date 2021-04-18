@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   resources :users, only:[:show,:edit,:update]
   resources :rooms, only:[:create, :show,:index]
   resources :messages, only:[:create,:destroy]
-  post '/home/guest_sign_in', to: 'home#new_guest'
 end
