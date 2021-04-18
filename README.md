@@ -7,21 +7,21 @@
   https://job-wiki-11.herokuapp.com/
   HOME画面の下部のゲストログインで閲覧することが可能です。
 
-  *Ruby 2.6.5
-  *Ruby on Rails 6.0.3.6
-  *Javascript
-  *bootstrap
-  *MySQL 14.14
-  *heroku
+  - Ruby 2.6.5
+  - Ruby on Rails 6.0.3.6
+  - Javascript
+  - bootstrap
+  - MySQL 14.14
+  - heroku
 
 # 機能一覧
-  *ユーザー登録、ログイン機能(devise)
-  *職業編集機能
-  *チャット機能(Ajax)
+  - ユーザー登録、ログイン機能(devise)
+  - 職業編集機能
+  - チャット機能(Ajax)
 #  テスト
-  *単体テスト
-  *機能テスト
-  *統合テスト
+  - 単体テスト
+  - 機能テスト
+  - 統合テスト
 
 # テーブル設計
 
