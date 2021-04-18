@@ -2,7 +2,6 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  skip_forgery_protection
 
   def guest_sign_in
     user = User.guest
