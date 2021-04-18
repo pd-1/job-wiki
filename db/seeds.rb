@@ -51,13 +51,3 @@ Job.create!(
   future:"〜〜として働くことの将来性は、〜〜のように考えられます。"
 )
 end
-
-Category.where.not(ancestry: nil).where.not(name: "学生").all.each do |category|
-  User.create!(name: Gimei.name.last.kanji,
-              email: Faker::Internet.free_email,
-              password: 'test1234',
-              password_confirmation: 'test1234',
-              category_id: category.id,
-              created_at: Time.zone.now,
-              updated_at: Time.zone.now)
-  end
