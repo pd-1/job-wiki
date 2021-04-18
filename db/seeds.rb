@@ -52,14 +52,6 @@ Job.create!(
 )
 end
 
-User.create!(name: 'ゲストユーザー',
-             email: 'guest@example.com',
-             password: 'test1234',
-             password_confirmation: 'test1234',
-             category_id: 17,
-             created_at: Time.zone.now,
-             updated_at: Time.zone.now)
-
 Category.where.not(ancestry: nil).where.not(name: "学生").all.each do |category|
   User.create!(name: Gimei.name.last.kanji,
               email: Faker::Internet.free_email,
