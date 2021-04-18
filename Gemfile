@@ -64,4 +64,5 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'ancestry'
 gem 'bootstrap', '~> 4.1.3'
-
+gem 'faker'
+gem 'gimei'
