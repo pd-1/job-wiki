@@ -37,10 +37,13 @@ function message () {
       </div>
     </div>
       `;
-    list.insertAdjacentHTML("beforeend",html);
-    formText.value = "";
-        list.scrollTop = list.scrollHeight;
-
+    if(item.content == ""){
+      alert('空では送信できません');
+        }else{
+          list.insertAdjacentHTML("beforeend",html);
+          formText.value = "";
+          list.scrollTop = list.scrollHeight;
+        }
   };
   });
 }
