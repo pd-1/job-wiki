@@ -1,7 +1,8 @@
 <div class="job-head">
   <h1 class="job-title"><%= @category.name %>wiki</h1>
   <% if @category.id == current_user.category_id%>
-      <%= link_to '編集する', edit_job_path(@job.category.id), class: 'job-edit'%>
+      <p class="job-subtitle">ここからWikiを編集することができます</p>
+      <%= link_to '編集する', edit_job_path(@job.category.id), class: 'job-edit btn bg-brown'%>
   <%end%>
 
 </div>
