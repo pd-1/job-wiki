@@ -1,7 +1,7 @@
 # Job-Wiki
   それぞれの業界の方々がみんなで作成した職業のwikiを見ることができる学生向けのアプリです。<br>またwikiの閲覧だけでなく登録している方と実際にチャットでやりとりができます。
 
-<a href="https://gyazo.com/340adf7a33293f177e81e6209b8ef931"><img src="https://i.gyazo.com/340adf7a33293f177e81e6209b8ef931.jpg" alt="Image from Gyazo" width="1440"/></a>
+<a href="https://gyazo.com/a11dcb5fcb8b2d50c6de8bc7de541094"><img src="https://i.gyazo.com/a11dcb5fcb8b2d50c6de8bc7de541094.jpg" alt="Image from Gyazo" width="1440"/></a>
 
 # ペルソナ
   就活を始める大学３,４年生で進路をこれから考えるために職業研究を開始する学生。<br>しかし、実際の職場環境や仕事内容がイメージできず自分が何をしたいのか考えている人に向けて作成しました。
