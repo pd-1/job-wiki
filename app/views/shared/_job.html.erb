@@ -4,34 +4,21 @@
       <div class="d-flex flex-wrap">
         <% @parents.where.not(name: "学生").each do |parent|%>
           <div class="col-4">
-            <div class="job-genres">
-                <a href="#chapter<%= parent.id %>"><%= parent.name %></a>
+          <div class="section s_01">
+          <div class="accordion_one">
+             <div class="accordion_header"><%= parent.name %><i class="one_i"></i></div>
+            <div class="accordion_inner">
+            <div class="box_one">
+            <% parent.children.each do |child|%>
+            <p class="txt_a_ac"><%=link_to child.name, job_path(child.id), class: "job-name"%></p>
+            <% end %>
+            </div>
+            </div>
+            </div>
             </div>
           </div>
         <% end %>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="job-head", style="margin-top: 5em;">
-  <h1 class="job-title">職業一覧</h1>
-</div>
-
-<div class="container">
-  <div class="row", style="margin-top: 10px;">
-    <div class="d-flex flex-column">
-    <% @parents.where.not(name: "学生").each do |parent|%>
-      <div class="col-12">
-        <ul class="job-genre-details">          
-          <li><a id="chapter<%= parent.id %>"><%= parent.name %></a></li>
-        </ul>
-          <% parent.children.each do |child|%>
-          <ul class="job-genre-children">
-            <li><a>・<%=link_to child.name, job_path(child.id)%></a></li>
-          </ul>
-          <% end %>
-      </div>
-    <% end %>
   </div>
 </div>

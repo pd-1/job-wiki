@@ -1,5 +1,5 @@
-<div class="profile-head">
-<h1>チャットルーム一覧</h1>
+<div class="job-head">
+<h1 class="job-title">チャットルーム一覧</h1>
 </div>
 <%if @anotherChats.present?%>
 <div class="conteiner">
@@ -10,9 +10,9 @@
         <div class="room-index-border">
           <div class="room-index-contain">
           <ul>
-            <li><%= link_to e.user.name, user_path(e.user.id) %>さん</li>
-            <li>職業：<%= link_to e.user.category.name, job_path(e.user.category.id) %></li>
-            <li class="room-index-chat"><%= link_to 'チャットルームへ', room_path(e.room.id),class: 'btn bg-brown' %></li>
+            <li><%= link_to e.user.name, user_path(e.user.id),class: "chat-user-name" %>さん</li>
+            <li>職業：<%= link_to e.user.category.name, job_path(e.user.category.id),class: "chat-user-name"  %></li>
+            <li class="room-index-chat"><%= link_to 'チャットルームへ', room_path(e.room.id),class: 'room-btn' %></li>
           </ul>
           </div>
         </div>

@@ -6,13 +6,13 @@
     <%end%>
   <ul class="nav">
     <% if user_signed_in?  %>
-    <li><%= link_to current_user.name, user_path(current_user.id)%>がログイン中です </li>
-    <li class="menu-item"><%= link_to "チャットルーム一覧", rooms_path, class: 'd-inline-block p-10'  %></li>
-    <li class="menu-item"><%= link_to "職業一覧", jobs_path, class: 'p-10 d-inline-block'  %></li>
-    <li class="menu-item"><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'p-10 d-inline-block' %></li>
+    <li class="menu-item" style="border-left:2px solid #ddd;"><%= link_to current_user.name, user_path(current_user.id), class: "d-inline-block p-10 header-nav"%>がログイン中です</li>
+    <li class="menu-item"><%= link_to "チャットルーム一覧", rooms_path, class: 'd-inline-block p-10 header-nav'  %></li>
+    <li class="menu-item"><%= link_to "職業一覧", jobs_path, class: 'p-10 d-inline-block header-nav'  %></li>
+    <li class="menu-item"><%= link_to "ログアウト",destroy_user_session_path, method: :delete, class: 'p-10 d-inline-block header-nav' %></li>
     <% else %>
-    <li class="menu-item"><%= link_to "ログイン", new_user_session_path, class: 'd-inline-block p-10'  %></li>
-    <li class="menu-item"><%= link_to "新規登録", new_user_registration_path, class: 'd-inline-block p-10'  %></li>
+    <li class="menu-item"style="border-left:2px solid #ddd;"><%= link_to "ログイン", new_user_session_path, class: 'd-inline-block p-10 header-nav'  %></li>
+    <li class="menu-item"><%= link_to "新規登録", new_user_registration_path, class: 'd-inline-block p-10 header-nav'  %></li>
     <% end %>
   </ul>
 </header>

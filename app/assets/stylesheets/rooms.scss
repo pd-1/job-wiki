@@ -1,9 +1,11 @@
 .join-member{
   text-align: center;
+  margin: 15px;
 }
 .overflow-scroll{
   overflow-y: auto;
-  height: 70vh;
+  height: 65vh;
+  background-color: white;
 }
 .join-member{
   font-size: 20px;
@@ -63,6 +65,10 @@
   width: 70vw;
   height: 12vh;
 }
+.chat-area{
+  background-color: white;
+
+}
 .chat-image{
   border-radius: 50%;
   border: 2px solid black; 
@@ -80,7 +86,7 @@
 
 // チャットルーム一覧
 .room-index-border{
-  border: 3px solid #b68973;
+  border: 3px solid #6cbf84;
   border-radius: 8px;
   height: 30vh;
   width: 30vw;
@@ -90,10 +96,32 @@
   padding: 25px;
   text-align: center;
   font-size: 28px;
+  background-color: white;
 }
 .room-index-chat{
   margin-top: 20px;
 }
 .chat-submit{
   margin-left: 20px;
+}
+.room-btn{
+  font-size: 25px;
+  border: solid 1px green;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  color : inherit;  
+  margin-top: 20px;
+}
+.room-btn:hover{
+  color: white;
+  background-color: #308645;
+  text-decoration: none;
+}
+.chat-user-name{
+  text-decoration: underline;
+  color : inherit;
+}
+.chat-user-name:hover{
+  text-decoration: none;
 }

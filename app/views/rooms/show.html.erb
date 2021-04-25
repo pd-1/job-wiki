@@ -56,7 +56,7 @@
 
 
 <div class="fixed-bottom">
-    <div>
+    <div class="chat-area">
   <%= form_with model:@message,method: :post,id: "form" do |f| %>
     <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , class: 'chat-text',id: "content" %>
     <%= f.hidden_field :room_id, value: @room.id %>

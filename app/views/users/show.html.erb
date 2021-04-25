@@ -1,5 +1,5 @@
-<div class="profile-head">
-  <h1><%= @user.name %>さんのプロフィール</h1>
+<div class="job-head">
+  <h1 class="job-title"><%= @user.name %>さんのプロフィール</h1>
   <div class="profile-size">
    <%if @user.image.present?%>
     <%= image_tag @user.image, class: 'profile-image',width: '260', height: '260' %>
@@ -26,7 +26,7 @@
 <% unless @user.id == current_user.id %>
   <% if @isRoom == true %>
     <div class="chat-box">
-    <a class="btn bg-brown chat-btn" href="/rooms/<%= @roomId %>">チャットへ</a>
+    <a class="room-btn" href="/rooms/<%= @roomId %>">チャットへ</a>
     </div>
   <% else %>
     <%= form_for @room do |f| %>
@@ -34,7 +34,7 @@
         <%= e.hidden_field :user_id, value: @user.id %>
       <% end %>
     <div class="chat-box">
-        <%= f.submit "チャットを始める",class: 'btn bg-brown' %>
+        <%= f.submit "チャットを始める",class: 'room-btn' %>
     </div>
       <%end%>
     <%end%>
