@@ -2,7 +2,7 @@
   <h1 class="job-title"><%= @category.name %>wiki</h1>
   <% if @category.id == current_user.category_id%>
       <p class="job-subtitle">ここからWikiを編集することができます</p>
-      <%= link_to '編集する', edit_job_path(@job.category.id), class: 'job-edit btn bg-brown'%>
+      <%= link_to '編集する', edit_job_path(@job.category.id), class: 'job-edit'%>
   <%end%>
 
 </div>
@@ -66,15 +66,17 @@
     <div class="job-subheading-content">
     <li><a id="chapter14" class="job-subheading-font"><%= @category.name %>として働いている方々</a></li>
    </div>
+   <div class="job-text-box" >
      <% if @user.blank?%>
-       <p class="job-text-box">
+       <p>
        <% @users.where.not(name: current_user.name).each do |user| %>
-       <%= link_to user.name, user_path(user.id) %>さん
+       <%= link_to user.name, user_path(user.id), class:"job-user-name" %>さん
          <% end %>
        </p>
      <% else %>
         <p class="job-text-box">まだ登録済みのユーザーが存在しません</p>
      <% end %>
+   <div>
   </ul>
 </div>
 
