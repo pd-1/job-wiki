@@ -64,3 +64,7 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'ancestry'
 gem 'bootstrap', '~> 4.1.3'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
