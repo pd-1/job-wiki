@@ -17,7 +17,7 @@
   - Javascript
   - bootstrap
   - MySQL 14.14
-  - heroku
+  - EC2
 
 # 機能一覧
   - ユーザー登録、ログイン機能(devise)
